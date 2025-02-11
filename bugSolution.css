@@ -1,0 +1,10 @@
+To mitigate the potential issues when using `calc()` with percentages and other units, it is recommended to be very careful and consistent with unit use and order of operations. Breaking down complex `calc()` expressions into simpler expressions might make it easier to avoid unforeseen results. Consider the following approach:
+
+```css
+.container {
+  width: 50%; /* Set the base width */
+  margin-left: 10px; /* Add the extra pixels as margin or padding instead */
+}
+```
+
+This alternative avoids the direct use of `calc()` with mixed units.  Instead, it uses percentage for the base width and then adds the extra pixels as a margin or padding. This is more predictable and less prone to unexpected results depending on the parent element's width or the order of operations within `calc()`. Another approach would be to use only one unit type in the calc expression to prevent any conversion issues.
