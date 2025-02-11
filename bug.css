@@ -1,0 +1,9 @@
+The CSS property `calc()` is used to perform calculations within CSS. However, there is a potential bug that arises when combining `calc()` with other CSS properties that might unexpectedly lead to unexpected rendering results. For example, using `calc()` with percentage values and other units simultaneously might produce incorrect layout results. Consider the following code snippet:
+
+```css
+.container {
+  width: calc(50% + 10px);
+}
+```
+
+This snippet attempts to set the width of the `.container` element to 50% of its parent's width plus 10 pixels.  However, depending on the context, particularly if the parent's width is itself dynamically determined or influenced by other CSS properties, the final calculation might not produce the intended outcome due to how browsers interpret unit conversions and order of operations within `calc()` expressions. The browser might evaluate the percentage first and then add the pixels, resulting in a different width than intended.
